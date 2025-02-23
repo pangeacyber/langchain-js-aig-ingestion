@@ -20,8 +20,8 @@ export class GuardedTextLoader extends TextLoader {
     await Promise.all(
       docs.map(async (doc) => {
         const guarded = await this.client.guardText({ text: doc.pageContent });
-        if (guarded.result.redacted_prompt) {
-          doc.pageContent = guarded.result.redacted_prompt;
+        if (guarded.result.prompt_text) {
+          doc.pageContent = guarded.result.prompt_text;
         }
       })
     );
