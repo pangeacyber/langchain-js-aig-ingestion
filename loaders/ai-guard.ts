@@ -2,7 +2,7 @@ import { TextLoader } from 'langchain/document_loaders/fs/text';
 import { AIGuardService, PangeaConfig } from 'pangea-node-sdk';
 
 export class GuardedTextLoader extends TextLoader {
-  private client;
+  private readonly client;
 
   constructor(
     filePathOrBlob: string | Blob,
